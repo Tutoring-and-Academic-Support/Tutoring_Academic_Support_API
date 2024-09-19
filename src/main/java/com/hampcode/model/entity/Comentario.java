@@ -11,7 +11,6 @@ import java.util.Date;
 public class Comentario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 10, nullable = false)
     private String id;
 
@@ -22,7 +21,7 @@ public class Comentario {
     private Date fecha;
 
     @ManyToOne
-    @JoinColumn(name = "email_estudiante", referencedColumnName = "email", nullable = false)
+    @JoinColumn(name = "id_estudiante", referencedColumnName = "id", nullable = false)
     private Estudiante estudiante;
 
     @ManyToOne

@@ -11,7 +11,6 @@ import java.util.List;
 public class Curso {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 10, nullable = false)
     private String id;
 

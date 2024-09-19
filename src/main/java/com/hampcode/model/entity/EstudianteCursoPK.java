@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class EstudianteCursoPK implements Serializable {
     @ManyToOne
-    @JoinColumn(name = "email_estudiante", referencedColumnName = "email", nullable = false)
+    @JoinColumn(name = "id_estudiante", referencedColumnName = "id", nullable = false)
     private Estudiante estudiante;
 
     @ManyToOne

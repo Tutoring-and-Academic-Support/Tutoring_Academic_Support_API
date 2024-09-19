@@ -14,7 +14,7 @@ public class Progreso {
     private String id; // Usa id como clave primaria
 
     @ManyToOne
-    @JoinColumn(name = "estudiante_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "id_estudiante", referencedColumnName = "id", nullable = false)
     private Estudiante estudiante;
 
     @ManyToOne

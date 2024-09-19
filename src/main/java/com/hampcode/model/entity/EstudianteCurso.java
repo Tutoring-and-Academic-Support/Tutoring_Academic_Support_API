@@ -13,7 +13,7 @@ public class EstudianteCurso {
 
     @ManyToOne
     @MapsId("estudiante") // Mapea el campo 'estudiante' de la clave compuesta
-    @JoinColumn(name = "email_estudiante", referencedColumnName = "email", nullable = false)
+    @JoinColumn(name = "id_estudiante", referencedColumnName = "email", nullable = false)
     private Estudiante estudiante;
 
     @ManyToOne
@@ -21,6 +21,6 @@ public class EstudianteCurso {
     @JoinColumn(name = "id_curso", referencedColumnName = "id", nullable = false)
     private Curso curso;
 
-    // Otros campos adicionales si es necesario
+
 }
 
