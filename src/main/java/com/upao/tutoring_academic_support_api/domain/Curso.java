@@ -21,6 +21,9 @@ public class Curso {
     @JsonManagedReference
     private List<Material> materiales; // Relación con los materiales
 
+    @Column(nullable = false)
+    private boolean disponible; // Indica si el curso está disponible
+
     // Getters y Setters
 
     public Long getId() {
@@ -53,5 +56,13 @@ public class Curso {
 
     public void setMateriales(List<Material> materiales) {
         this.materiales = materiales;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 }
