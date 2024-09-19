@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CursoRepository extends JpaRepository<Curso, Long> {
+    // Verificar si el tutor está asignado a un curso
+    boolean existsByIdAndCursoTutores_Tutor_IdTutor(Long cursoId, Long tutorId);
 }

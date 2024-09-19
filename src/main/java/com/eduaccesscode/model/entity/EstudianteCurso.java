@@ -16,7 +16,7 @@ public class EstudianteCurso {
     private Estudiante estudiante;
 
     @ManyToOne
-    @MapsId("idCurso")  // Esto mapea el campo 'idCurso' de la clave compuesta
+    @MapsId("idCurso")
     @JoinColumn(name = "id_curso", referencedColumnName = "id")
     private Curso curso;
 

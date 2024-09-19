@@ -7,7 +7,9 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "progreso")
+@Table(name = "progreso", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"id_estudiante", "id_curso"})
+})
 public class Progreso {
 
     @Id
@@ -25,6 +27,7 @@ public class Progreso {
     @Column(name = "estado", length = 50, nullable = false)
     private EstadoProgreso estado;
 
+    // Mapeo a la clave compuesta de EstudianteCurso
     @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "id_estudiante", referencedColumnName = "id_estudiante"),
