@@ -1,4 +1,4 @@
-package com.hampcode;
+package com.eduaccesscode;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
