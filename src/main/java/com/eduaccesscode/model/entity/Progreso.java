@@ -1,5 +1,6 @@
 package com.eduaccesscode.model.entity;
 
+import com.eduaccesscode.model.enums.EstadoProgreso;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;
@@ -19,6 +20,10 @@ public class Progreso {
 
     @Column(name = "fecha_ultimo_acceso", nullable = false)
     private Date fechaUltimoAcceso;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "estado", length = 50, nullable = false)
+    private EstadoProgreso estado;
 
     @ManyToOne
     @JoinColumns({
