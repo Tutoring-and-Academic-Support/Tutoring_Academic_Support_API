@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface TutorService {
     public Tutor sesionTutor(Tutor tutor);
-
+    // id
     public Tutor findById(Integer id);
     public Tutor update(Integer id, Tutor updateTutor);
 }
