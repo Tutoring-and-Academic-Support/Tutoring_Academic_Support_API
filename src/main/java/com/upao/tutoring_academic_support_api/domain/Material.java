@@ -1,5 +1,7 @@
 package com.upao.tutoring_academic_support_api.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.upao.tutoring_academic_support_api.TipoMaterial;
 import jakarta.persistence.*;
 import java.util.Date;
 
@@ -23,6 +25,7 @@ public class Material {
 
     @ManyToOne
     @JoinColumn(name = "curso_id", referencedColumnName = "id", nullable = false) // Relación con Curso
+    @JsonBackReference
     private Curso curso; // Clave foránea a la entidad Curso
 
     // Getters y Setters

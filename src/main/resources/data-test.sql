@@ -1,31 +1,14 @@
-INSERT INTO usuario (id, email, contraseña, rol)
-VALUES ('U001', 'juan@example.com', 'password123', 'ESTUDIANTE')
-    ON CONFLICT (email) DO NOTHING;
+-- Insertar cursos
+INSERT INTO curso (id, nombre, descripcion) VALUES
+(1, 'Introducción a Java', 'Curso básico de introducción a Java'),
+(2, 'Desarrollo Web con Angular', 'Curso sobre desarrollo web usando Angular'),
+(3, 'Fundamentos de SQL', 'Curso sobre conceptos fundamentales de SQL');
 
-INSERT INTO estudiante (id, email, nombre, matricula, usuario_id)
-VALUES ('E001', 'juan@example.com', 'Juan Perez', '2021001', 'U001')
-    ON CONFLICT (email) DO NOTHING;
-
-INSERT INTO curso (id, titulo, descripcion)
-VALUES (1, 'Matemáticas Avanzadas', 'Curso de matemáticas nivel avanzado')
-    ON CONFLICT (id) DO NOTHING;
-
-INSERT INTO estudiante_curso (email_estudiante, id_curso)
-VALUES ('juan@example.com', 1)
-    ON CONFLICT (email_estudiante, id_curso) DO NOTHING;
-
-INSERT INTO progreso (id, porcentaje, estado, estudiante_id, curso_id)
-VALUES ('P001', 75.0, 'EN_PROGRESO', 'E001', 1)
-    ON CONFLICT (id) DO NOTHING;
-
-INSERT INTO suscripcion (id, usuario_id, tipo, fecha_inicio, fecha_expiracion)
-VALUES ('S001', 'U001', 'PERSONAL', '2024-01-01', '2024-12-31')
-    ON CONFLICT (id) DO NOTHING;
-
-INSERT INTO material (id, titulo, tipo, fecha_subida, curso_id)
-VALUES (1, 'PDF de Álgebra Lineal', 'PDF', '2024-02-01', 1)
-    ON CONFLICT (id) DO NOTHING;
-
-INSERT INTO comentario (id, texto, fecha, email_estudiante, id_material)
-VALUES ('C001', 'Este PDF me ayudó mucho a entender el tema', '2024-02-10', 'juan@example.com', 1)
-    ON CONFLICT (id) DO NOTHING;
+-- Insertar materiales
+INSERT INTO material (id, titulo, tipo, fecha_subida, curso_id) VALUES
+('M001', 'Introducción a Java - Capítulo 1.pdf', 'DOCUMENTO', '2024-09-01 10:00:00', 1),
+('M002', 'Estructuras de Datos en Java.mp4', 'VIDEO', '2024-09-02 11:00:00', 1),
+('M003', 'Guía Rápida de Angular.pdf', 'DOCUMENTO', '2024-09-03 09:00:00', 2),
+('M004', 'Tutorial Angular.mp4', 'VIDEO', '2024-09-04 14:00:00', 2),
+('M005', 'Conceptos Básicos de SQL.txt', 'TEXTO', '2024-09-05 15:00:00', 3),
+('M006', 'Comandos SQL Avanzados.pdf', 'DOCUMENTO', '2024-09-06 16:00:00', 3);
