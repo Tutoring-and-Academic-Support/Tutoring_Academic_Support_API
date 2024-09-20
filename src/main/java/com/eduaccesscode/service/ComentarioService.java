@@ -24,20 +24,12 @@ public class ComentarioService {
     // Lista de palabras ofensivas o prohibidas que puedes ajustar
     private final List<String> palabrasProhibidas = Arrays.asList("mala palabra1", "mala palabra2");
 
-    // Método que verifica si el comentario contiene contenido ofensivo
-    private boolean contieneContenidoOfensivo(String comentario) {
-        return palabrasProhibidas.stream().anyMatch(comentario.toLowerCase()::contains);
-    }
 
     public String publicarComentario(ComentarioDTO comentarioDTO) throws Exception {
         // Busca el curso en lugar del material
         Curso curso = cursoRepository.findById(comentarioDTO.getCursoId())
                 .orElseThrow(() -> new Exception("Curso no encontrado"));
 
-        // Validación dentro del servicio
-        if (contieneContenidoOfensivo(comentarioDTO.getComment())) {
-            throw new Exception("El comentario contiene contenido ofensivo");
-        }
 
         Comentario comentario = new Comentario();
         comentario.setTexto(comentarioDTO.getComment());

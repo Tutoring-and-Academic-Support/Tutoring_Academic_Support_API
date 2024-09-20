@@ -1,5 +1,6 @@
 package com.eduaccesscode.model.entity;
 
+import com.eduaccesscode.model.enums.EstadoCurso;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
@@ -20,8 +21,9 @@ public class Curso {
     @Column(name = "descripcion", columnDefinition = "TEXT")
     private String descripcion;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "estado", length = 50, nullable = false)
-    private String estado;
+    private EstadoCurso estado;
 
     @Column(name = "valoracion", nullable = false)
     private int valoracion;

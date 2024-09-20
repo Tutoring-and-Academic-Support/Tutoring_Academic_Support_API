@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/comentarios")
 @Validated
 public class ComentarioController {
 
