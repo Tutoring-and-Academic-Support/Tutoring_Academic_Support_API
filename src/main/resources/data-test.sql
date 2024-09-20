@@ -26,11 +26,11 @@ VALUES (1, 1, '2024-09-01'),
        (3, 3, '2024-09-03')
     ON CONFLICT (id_estudiante, id_curso) DO NOTHING;
 
-INSERT INTO progreso (id_progreso, porcentaje, fecha_ultimo_acceso, id_estudiante, id_curso, estado)
-VALUES
-    (1, 50.0, '2024-09-10', 1, 1, 'INICIADO'),
-    (2, 75.0, '2024-09-12', 2, 2, 'EN_PROGRESO'),
-    (3, 100.0, '2024-09-15', 3, 3, 'COMPLETADO')
+-- Insertar progreso (ahora que estudiante_curso está poblada)
+INSERT INTO progreso (id_progreso, porcentaje, fecha_ultimo_acceso, id_estudiante, id_curso)
+VALUES (1, 50.0, '2024-09-10', 1, 1),
+       (2, 75.0, '2024-09-12', 2, 2),
+       (3, 100.0, '2024-09-15', 3, 3)
     ON CONFLICT (id_progreso) DO NOTHING;
 
 -- Insertar materiales
@@ -48,13 +48,11 @@ VALUES (1, 'Nota sobre álgebra', '2024-09-05', 1),
     ON CONFLICT (id) DO NOTHING;
 
 -- Insertar comentarios
--- Insertar comentarios sin especificar el campo id, dejando que se genere automáticamente
-INSERT INTO comentario (texto, fecha, curso_id)
-VALUES ('Muy buen curso de matemáticas', '2024-09-08', 1),
-       ('Curso interesante sobre biología', '2024-09-09', 2),
-       ('El curso de desarrollo web es excelente', '2024-09-10', 3)
+INSERT INTO comentario (id, texto, fecha, curso_id)
+VALUES (1, 'Muy buen curso de matemáticas', '2024-09-08', 1),
+       (2, 'Curso interesante sobre biología', '2024-09-09', 2),
+       (3, 'El curso de desarrollo web es excelente', '2024-09-10', 3)
     ON CONFLICT (id) DO NOTHING;
-
 
 -- Insertar pagos
 INSERT INTO pago (id_pago, fecha_pago, monto_total)
@@ -76,4 +74,3 @@ VALUES (1, 1, '2024-09-01', '2024-12-01'),
        (2, 2, '2024-09-01', '2024-12-01'),
        (3, 3, '2024-09-01', '2024-12-01')
     ON CONFLICT (id_curso, id_tutor) DO NOTHING;
-

@@ -23,8 +23,4 @@ public class Comentario {
     @ManyToOne
     @JoinColumn(name = "curso_id", referencedColumnName = "id", nullable = false)
     private Curso curso;
-
-    public void setCurso(Curso curso){
-        this.curso = curso;
-    }
 }
