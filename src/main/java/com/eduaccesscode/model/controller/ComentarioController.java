@@ -1,7 +1,7 @@
 package com.eduaccesscode.model.controller;
 
 import com.eduaccesscode.model.entity.Comentario;
-import com.eduaccesscode.service.ComentarioService;
+import com.eduaccesscode.model.service.ComentarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ public class ComentarioController {
     // Publicar comentario
     @PostMapping("/publicar")
     public ResponseEntity<String> publicarComentario(@RequestBody PublicarComentarioRequest request) {
-        String response = comentarioService.publicarComentario(request.getCursoId(), request.getTexto());
+        String response = comentarioService.publicarComentario(request.getEstudianteId(), request.getCursoId(), request.getTexto());
         if (response.equals("Comentario publicado con éxito.")) {
             return ResponseEntity.ok(response);
         } else {
@@ -48,6 +48,7 @@ public class ComentarioController {
 // Clase para manejar la solicitud de publicar comentario
 class PublicarComentarioRequest {
     private Long cursoId;
+    private Long estudianteId;
     private String texto;
 
     // Getters y setters
@@ -65,5 +66,8 @@ class PublicarComentarioRequest {
 
     public void setTexto(String texto) {
         this.texto = texto;
+    }
+    public Long getEstudianteId() {
+        return estudianteId;
     }
 }

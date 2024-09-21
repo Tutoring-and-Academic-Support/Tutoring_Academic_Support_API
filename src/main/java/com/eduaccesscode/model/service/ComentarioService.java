@@ -25,7 +25,7 @@ public class ComentarioService {
     private EstudianteCursoRepository estudianteCursoRepository;
 
     // Publicar comentario
-    public String publicarComentario(Long estudianteId, String texto) {
+    public String publicarComentario(Long estudianteId, Long cursoId, String texto) {
         if (texto.length() > 500) {
             return "El comentario excede el límite de caracteres permitidos.";
         }
@@ -37,12 +37,12 @@ public class ComentarioService {
         }
 
         // Buscar el curso
-        Optional<Comentario> cursoOptional = cursoRepository.findById(cursoId);
+        Optional<Curso> cursoOptional= cursoRepository.findById(cursoId);
         if (cursoOptional.isEmpty()) {
             return "Curso no encontrado.";
         }
 
-        Curso curso = cursoOptional.get().getCurso();
+        Curso curso = cursoOptional.get(); // Obtener el curso
 
         // Crear el comentario
         Comentario comentario = new Comentario();
