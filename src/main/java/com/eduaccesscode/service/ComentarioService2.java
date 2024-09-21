@@ -1,10 +1,10 @@
 package com.eduaccesscode.model.service;
 
-import com.eduaccesscode.model.entity.Comentario;
-import com.eduaccesscode.model.entity.Curso;
-import com.eduaccesscode.model.repository.ComentarioRepository;
-import com.eduaccesscode.model.repository.CursoRepository;
-import com.eduaccesscode.model.repository.EstudianteCursoRepository;
+import com.eduaccesscode.entity.Comentario;
+import com.eduaccesscode.entity.Curso;
+import com.eduaccesscode.repository.ComentarioRepository;
+import com.eduaccesscode.repository.CursoRepository;
+import com.eduaccesscode.repository.EstudianteCursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ComentarioService {
+public class ComentarioService2 {
 
     @Autowired
     private ComentarioRepository comentarioRepository;
