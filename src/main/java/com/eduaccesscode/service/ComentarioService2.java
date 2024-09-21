@@ -1,10 +1,10 @@
-package com.eduaccesscode.service;
+package com.eduaccesscode.model.service;
 
-import com.eduaccesscode.entity.Comentario;
-import com.eduaccesscode.entity.Curso;
+import com.eduaccesscode.model.entity.Comentario;
+import com.eduaccesscode.model.entity.Curso;
 import com.eduaccesscode.model.repository.ComentarioRepository;
 import com.eduaccesscode.model.repository.CursoRepository;
-import com.eduaccesscode.repository.EstudianteCursoRepository;
+import com.eduaccesscode.model.repository.EstudianteCursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,7 @@ public class ComentarioService {
     private EstudianteCursoRepository estudianteCursoRepository;
 
     // Publicar comentario
-    public String publicarComentario(Long estudianteId, String texto) {
+    public String publicarComentario(Long estudianteId, Long cursoId, String texto) {
         if (texto.length() > 500) {
             return "El comentario excede el límite de caracteres permitidos.";
         }
@@ -37,12 +37,12 @@ public class ComentarioService {
         }
 
         // Buscar el curso
-        Optional<Comentario> cursoOptional = cursoRepository.findById(cursoId);
+        Optional<Curso> cursoOptional= cursoRepository.findById(cursoId);
         if (cursoOptional.isEmpty()) {
             return "Curso no encontrado.";
         }
 
-        Curso curso = cursoOptional.get().getCurso();
+        Curso curso = cursoOptional.get(); // Obtener el curso
 
         // Crear el comentario
         Comentario comentario = new Comentario();
