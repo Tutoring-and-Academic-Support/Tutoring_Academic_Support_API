@@ -1,6 +1,6 @@
 package com.eduaccesscode.repository;
 
-import com.eduaccesscode.model.entity.Estudiante;
+import com.eduaccesscode.entity.Estudiante;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

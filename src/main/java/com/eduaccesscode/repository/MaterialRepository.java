@@ -1,9 +1,10 @@
 package com.eduaccesscode.repository;
 
-import com.eduaccesscode.entity.Curso;
+import com.upao.tutoring_academic_support_api.domain.Material;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CursoRepository extends JpaRepository<Curso, Long> {
+public interface MaterialRepository extends JpaRepository<Material, Long> {
 }
+

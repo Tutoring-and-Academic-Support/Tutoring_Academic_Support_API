@@ -1,15 +1,10 @@
 package com.eduaccesscode.service.implem;
 
-import com.eduaccesscode.model.entity.Estudiante;
+import com.eduaccesscode.entity.Estudiante;
 import com.eduaccesscode.repository.EstudianteRepository;
 import com.eduaccesscode.service.EstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import com.eduaccesscode.model.entity.Estudiante;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import java.io.Serializable;
 
 @Service
 public class EstudianteServiceImpl implements EstudianteService {

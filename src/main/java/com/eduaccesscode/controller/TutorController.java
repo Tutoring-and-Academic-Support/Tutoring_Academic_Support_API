@@ -1,7 +1,6 @@
 package com.eduaccesscode.controller;
 
-import com.eduaccesscode.model.entity.Estudiante;
-import com.eduaccesscode.model.entity.Tutor;
+import com.eduaccesscode.entity.Tutor;
 import com.eduaccesscode.service.TutorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

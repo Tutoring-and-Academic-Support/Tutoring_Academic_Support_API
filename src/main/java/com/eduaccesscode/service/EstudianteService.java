@@ -1,5 +1,5 @@
 package com.eduaccesscode.service;
-import com.eduaccesscode.model.entity.Estudiante;
+import com.eduaccesscode.entity.Estudiante;
 import org.springframework.stereotype.Service;
 
 @Service

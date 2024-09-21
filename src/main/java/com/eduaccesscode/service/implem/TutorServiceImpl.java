@@ -1,6 +1,6 @@
 package com.eduaccesscode.service.implem;
 
-import com.eduaccesscode.model.entity.Tutor;
+import com.eduaccesscode.entity.Tutor;
 import com.eduaccesscode.repository.TutorRepository;
 import com.eduaccesscode.service.TutorService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.eduaccesscode.mapper;
 
 import com.eduaccesscode.dto.ComentarioDTO;
-import com.eduaccesscode.model.entity.Comentario;
+import com.eduaccesscode.entity.Comentario;
 import org.springframework.stereotype.Component;
 
 @Component

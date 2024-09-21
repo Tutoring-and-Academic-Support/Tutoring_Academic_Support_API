@@ -1,6 +1,6 @@
 package com.eduaccesscode.service;
 
-import com.eduaccesscode.model.entity.Tutor;
+import com.eduaccesscode.entity.Tutor;
 import org.springframework.stereotype.Service;
 
 @Service
